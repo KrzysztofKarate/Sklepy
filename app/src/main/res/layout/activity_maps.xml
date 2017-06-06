@@ -1,0 +1,80 @@
+<LinearLayout xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/map"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/search_btn"
+        android:background="@color/colorPrimary"
+        android:text="  Oto najbliższy wynik:"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <!--
+         <TextView
+             android:id="@+id/miejsce_view"
+             android:layout_width="262dp"
+             android:layout_height="match_parent"
+             android:layout_toStartOf="@+id/search_bar"
+             android:textColor="@android:color/black"
+             android:background="@android:color/holo_green_light"
+             android:textSize="20dp"
+             android:layout_marginStart="6dp"
+             android:layout_marginEnd="6dp"
+             />
+   -->
+
+         <Button
+             android:id="@+id/type_btn"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:onClick="changeType"
+             android:text="typ mapy" />
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center"
+         android:orientation="horizontal">
+
+         <Button
+             android:id="@+id/zoomOut"
+             android:layout_width="195dp"
+             android:layout_height="wrap_content"
+             android:onClick="onZoom"
+             android:text="oddal" />
+
+         <Button
+             android:id="@+id/zoomIn"
+             android:layout_width="195dp"
+             android:layout_height="wrap_content"
+             android:onClick="onZoom"
+             android:text="przybliż" />
+
+     </LinearLayout>
+
+     <fragment
+         android:id="@+id/map"
+         android:name="com.google.android.gms.maps.SupportMapFragment"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_alignParentStart="true" />
+
+
+ </LinearLayout>
